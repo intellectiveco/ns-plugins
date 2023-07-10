@@ -55,12 +55,19 @@ module.exports = {
       },
     },
     '⚙️': {
-      script: `npx cowsay "@nativescript/* packages will keep your ⚙️ cranking"`,
-      description: '_____________  @nativescript/*  _____________',
+      script: `npx cowsay "@intellectiveco/* packages will keep your ⚙️ cranking"`,
+      description: '_____________  @intellectiveco/*  _____________',
     },
     // packages
     // build output is always in dist/packages
-    '@nativescript': {
+    '@intellectiveco': {
+      // @intellectiveco/secure-storage
+      'secure-storage': {
+        build: {
+          script: 'nx run secure-storage:build.all',
+          description: '@intellectiveco/secure-storage: Build',
+        },
+      },
       'build-all': {
         script: 'nx run-many --target=build.all --all',
         description: 'Build all packages',
@@ -71,8 +78,12 @@ module.exports = {
       description: '_____________  Focus (VS Code supported)  _____________',
     },
     focus: {
+      'secure-storage': {
+        script: 'nx run secure-storage:focus',
+        description: 'Focus on @intellectiveco/secure-storage',
+      },
       reset: {
-        script: 'nx g @nativescript/plugin-tools:focus-packages',
+        script: 'nx g @intellectiveco/plugin-tools:focus-packages',
         description: 'Reset Focus',
       },
     },
